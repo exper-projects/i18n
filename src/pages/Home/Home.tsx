@@ -1,11 +1,18 @@
 import React from 'react';
-import styles from './Home.module.scss';
+
 import FeatureIcon from '../../assets/icons/feature-icon.svg';
 
+import styles from './Home.module.scss';
+
+import { useIntlMessages } from '@/hooks/useIntlMessages';
+import messages from './Home.messages';
+
 const Home: React.FC = () => {
+  const intlMessages = useIntlMessages(messages);
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Welcome to Our Platform</h1>
+      <h1 className={styles.title}>{intlMessages.welcomeToOurPlatform}</h1>
       <div className={styles.content}>
         <div className={styles.card}>
           <FeatureIcon className={styles.icon} />
